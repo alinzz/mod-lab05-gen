@@ -4,14 +4,15 @@ using System.IO;
 
 namespace generator
 {
-    
-    public class CharGenerator 
+    //генератор текста на основе пар букв (биграмм)
+    public class CharGenerator
     {
-        private string syms = "абвгдеёжзийклмнопрстуфхцчшщьыэюя";
+        private string syms = "абвгдежзийклмнопрстуфхцчшщьыэюя";
         private char[] data;
         private int size;
         private Random random = new Random();
         private int[,] weights;
+        //Массив верхних границ диапазона целых чисел для каждого из символов
         int[,] np;
         int[] summa;
         int lastSym = -1;
@@ -79,6 +80,7 @@ namespace generator
             else
             {
                 m = random.Next(0, summa[lastSym]);
+            }
             int j;
             for (j = 0; j < size; j++)
             {
@@ -89,7 +91,7 @@ namespace generator
             return data[j];
         }
 
-        public SortedDictionary<char, int> saveToFile(string path)
+         public SortedDictionary<char, int> saveToFile(string path)
         {
             SortedDictionary<char, int> stat = new SortedDictionary<char, int>();
 
@@ -274,8 +276,8 @@ namespace generator
         {
             static void Main(string[] args)
             {
-                //генератор текста на основе пар букв (биграмм)
-                CharGenerator gen1 = new CharGenerator();
+            //генератор текста на основе пар букв (биграмм)
+             CharGenerator gen1 = new CharGenerator();
                 gen1.saveToFile("results/first.txt");
 
                 //генератор текста на основе частотных свойств слов
@@ -290,4 +292,5 @@ namespace generator
             }
         }
     }
-}
+
+
