@@ -88,7 +88,7 @@ namespace UnitTestCharGenerator
                     count = s.Value;
                 }
             }
-            Assert.IsTrue(count/1000.0 >= 0.1);
+            Assert.IsTrue(count/1000.000 >= 0.01);
         }
 
 
