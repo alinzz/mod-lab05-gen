@@ -89,7 +89,7 @@ namespace generator
             return data[j];
         }
 
-        public SortedDictionary<char, int> saveToFile(string path)
+        SortedDictionary<char, int> saveToFile(string path)
         {
             SortedDictionary<char, int> stat = new SortedDictionary<char, int>();
 
