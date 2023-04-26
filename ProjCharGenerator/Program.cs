@@ -7,7 +7,7 @@ namespace generator
     
     public class CharGenerator 
     {
-        private string syms = "абвгдежзийклмнопрстуфхцчшщьыэюя";
+        private string syms = "абвгдеёжзийклмнопрстуфхцчшщьыэюя";
         private char[] data;
         private int size;
         private Random random = new Random();
@@ -89,7 +89,7 @@ namespace generator
             return data[j];
         }
 
-        private SortedDictionary<char, int> saveToFile(string path)
+        static SortedDictionary<char, int> saveToFile(string path)
         {
             SortedDictionary<char, int> stat = new SortedDictionary<char, int>();
 
@@ -290,3 +290,4 @@ namespace generator
             }
         }
     }
+}
